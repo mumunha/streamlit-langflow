@@ -14,11 +14,11 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-try:
-    from langflow.load import upload_file
-except ImportError:
-    warnings.warn("Langflow provides a function to help you upload files to the flow. Please install langflow to use it.")
-    upload_file = None
+# try:
+#     from langflow.load import upload_file
+# except ImportError:
+#     warnings.warn("Langflow provides a function to help you upload files to the flow. Please install langflow to use it.")
+#     upload_file = None
 
 BASE_API_URL = "https://langflow.mumunha.xyz"
 FLOW_ID = "4a78c140-6113-4838-a788-7ba455dc5b9d"
