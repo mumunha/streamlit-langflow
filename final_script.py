@@ -20,42 +20,39 @@ except ImportError:
     warnings.warn("Langflow provides a function to help you upload files to the flow. Please install langflow to use it.")
     upload_file = None
 
-BASE_API_URL = "http://127.0.0.1:7860"
-FLOW_ID = "a8e00c6e-9144-42e5-a9a3-684e5b16dfee"
+BASE_API_URL = "https://langflow.mumunha.xyz"
+FLOW_ID = "4a78c140-6113-4838-a788-7ba455dc5b9d"
 ENDPOINT = "" # You can set a specific endpoint name in the flow settings
-
-DEBUG = False
 
 # You can tweak the flow by adding a tweaks dictionary
 # e.g {"OpenAI-XXXXX": {"model_name": "gpt-4"}}
 TWEAKS = {
-  "Prompt-14xLZ": {},
-  "ChatInput-jebY0": {},
-  "ChatOutput-032Ec": {},
-  "GoogleSerperAPI-SZQPI": {},
-  "OpenAIModel-xRa5b": {},
-  "TextInput-MSFp7": {},
-  "APIRequest-BoQEV": {},
-  "TextInput-1TAOl": {},
-  "TextInput-N2Jzt": {},
-  "Webhook-j4j9M": {},
-  "ParseData-EGVyz": {},
-  "OpenAIModel-ODnE0": {},
-  "Prompt-UAVSH": {},
-  "ParseData-HoDVq": {},
-  "CombineText-GQeIv": {},
-  "TextInput-4q4ln": {},
-  "TextInput-JBzJ8": {},
-  "Prompt-C4R08": {},
-  "TextInput-6xwqT": {},
-  "Prompt-6yZjJ": {},
-  "OpenAIModel-QDcLd": {},
-  "OpenAIModel-2gKLw": {},
-  "AnthropicModel-4rsXd": {},
-  "AnthropicModel-iTLFl": {},
-  "DallEImageGenerator-s2rxy": {},
-  "PromptComponent-0rcBo": {}
+  "Prompt-nKzlt": {},
+  "ChatInput-KrBpp": {},
+  "ChatOutput-VqSw5": {},
+  "TextInput-z4dax": {},
+  "APIRequest-yObcM": {},
+  "TextInput-r54jz": {},
+  "TextInput-VtIAR": {},
+  "Webhook-mVKLT": {},
+  "ParseData-M8Ch8": {},
+  "Prompt-LkpPg": {},
+  "CombineText-sVCXM": {},
+  "TextInput-g8HvQ": {},
+  "TextInput-AhCrB": {},
+  "Prompt-132Cy": {},
+  "TextInput-EWbsm": {},
+  "Prompt-xw5Nj": {},
+  "OpenAIModel-h4hdc": {},
+  "OpenAIModel-kFb5t": {},
+  "AnthropicModel-mQEJ7": {},
+  "AnthropicModel-YRf1M": {},
+  "DallEImageGenerator-0FVRz": {},
+  "PromptComponent-kNA2P": {},
+  "CreateData-sY3kD": {}
 }
+
+DEBUG = False
 
 def send_to_webhook(image_urls, whatsapp_number):
     webhook_url = "https://webhook.mumunha.xyz/webhook/99c17b59-3a78-45e4-b018-8974183f2810"
@@ -285,33 +282,34 @@ def main():
             
             if is_youtube_link(message):
                 # Use the second flow for YouTube links
-                YOUTUBE_FLOW_ID = "5a28fdca-3575-4ebc-8601-b4e528097532"
+                YOUTUBE_FLOW_ID = "ff9c59d9-02ed-48e4-a7e0-84272be3c88f"
                 YOUTUBE_TWEAKS = {
-                    "Prompt-ZC1Tg": {},
-                    "ChatInput-t4pgZ": {},
-                    "ChatOutput-CCawS": {},
-                    "TextInput-IVF5F": {},
-                    "APIRequest-mVrVY": {},
-                    "TextInput-MSkMF": {},
-                    "TextInput-K1aKT": {},
-                    "Webhook-vGtjV": {},
-                    "ParseData-E6rEW": {},
-                    "Prompt-77FKY": {},
-                    "CombineText-4sShZ": {},
-                    "TextInput-Pi0xu": {},
-                    "TextInput-caDm3": {},
-                    "Prompt-qc7ue": {},
-                    "TextInput-wXHXu": {},
-                    "Prompt-Q3xaY": {},
-                    "OpenAIModel-uWs0Q": {},
-                    "OpenAIModel-ppOA5": {},
-                    "AnthropicModel-HJxTt": {},
-                    "DallEImageGenerator-IlBUC": {},
-                    "PromptComponent-2axgY": {},
-                    "YouTubeTranscriptExtractor-qsA7O": {},
-                    "OpenAIModel-Jnm6L": {}
+                    "Prompt-zQDhv": {},
+                    "ChatInput-uvUaF": {},
+                    "ChatOutput-pUlDG": {},
+                    "TextInput-hdMfm": {},
+                    "APIRequest-irgHK": {},
+                    "TextInput-9tlWp": {},
+                    "TextInput-epC21": {},
+                    "Webhook-95gLz": {},
+                    "ParseData-BgD4V": {},
+                    "Prompt-nyamU": {},
+                    "CombineText-fy34I": {},
+                    "TextInput-GTJmO": {},
+                    "TextInput-rPfX5": {},
+                    "Prompt-xudpi": {},
+                    "TextInput-tGdfT": {},
+                    "Prompt-DIoAj": {},
+                    "OpenAIModel-eFKGL": {},
+                    "OpenAIModel-5hIDP": {},
+                    "AnthropicModel-gNWrn": {},
+                    "DallEImageGenerator-9kNK9": {},
+                    "PromptComponent-dnwIT": {},
+                    "YouTubeTranscriptExtractor-yinDa": {},
+                    "OpenAIModel-WCdt3": {},
+                    "CreateData-jbPxB": {}
                 }
-                YOUTUBE_TWEAKS["TextInput-Pi0xu"] = {"input_value": f'"{template_code}"'}
+                YOUTUBE_TWEAKS["TextInput-GTJmO"] = {"input_value": f'"{template_code}"'}
                 
                 with st.spinner("Gerando carrossel baseado no vídeo do YouTube..."):
                     response = run_flow(
@@ -324,7 +322,7 @@ def main():
                     )
             else:
                 # Use the original flow for non-YouTube inputs
-                TWEAKS["TextInput-4q4ln"] = {"input_value": f'"{template_code}"'}
+                TWEAKS["TextInput-g8HvQ"] = {"input_value": f'"{template_code}"'}
                 
                 with st.spinner("Gerando carrossel..."):
                     response = run_flow(
