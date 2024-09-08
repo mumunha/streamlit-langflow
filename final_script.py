@@ -23,7 +23,7 @@ load_dotenv()
 BASE_API_URL = "https://langflow.mumunha.xyz"
 FLOW_ID = "4a78c140-6113-4838-a788-7ba455dc5b9d"
 ENDPOINT = "" # You can set a specific endpoint name in the flow settings
-API_KEY = "sk-bM3yWoPbvDnF130Gpt02iKvX5Db8GFqh4HwL8-Ap2uw"
+API_KEY = os.getenv("LANGFLOW_API_KEY")
 
 # You can tweak the flow by adding a tweaks dictionary
 # e.g {"OpenAI-XXXXX": {"model_name": "gpt-4"}}
@@ -220,7 +220,7 @@ def main():
     # Add input field for WhatsApp number
     whatsapp_number = None
     if send_to_whatsapp:
-        whatsapp_number = st.text_input("Informe o número do WhatsApp para receber as imagens:")
+        whatsapp_number = st.text_input("Informe o número do WhatsApp para receber as imagens (formato: 5511999999999):")
 
     st.subheader("Selecione o template:")
     col1, col2, col3, col4 = st.columns(4)
