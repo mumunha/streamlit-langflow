@@ -23,6 +23,7 @@ load_dotenv()
 BASE_API_URL = "https://langflow.mumunha.xyz"
 FLOW_ID = "4a78c140-6113-4838-a788-7ba455dc5b9d"
 ENDPOINT = "" # You can set a specific endpoint name in the flow settings
+API_KEY = "sk-bM3yWoPbvDnF130Gpt02iKvX5Db8GFqh4HwL8-Ap2uw"
 
 # You can tweak the flow by adding a tweaks dictionary
 # e.g {"OpenAI-XXXXX": {"model_name": "gpt-4"}}
@@ -318,7 +319,7 @@ def main():
                         output_type="chat",
                         input_type="chat",
                         tweaks=YOUTUBE_TWEAKS,
-                        api_key=None
+                        api_key=API_KEY
                     )
             else:
                 # Use the original flow for non-YouTube inputs
@@ -331,7 +332,7 @@ def main():
                         output_type="chat",
                         input_type="chat",
                         tweaks=TWEAKS,
-                        api_key=None
+                        api_key=API_KEY
                     )
 
             if DEBUG:
